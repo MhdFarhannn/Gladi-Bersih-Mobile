@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="screen_padding">48dp</dimen>
+    <dimen name="list_padding">32dp</dimen>
+    <dimen name="image_preview_height">280dp</dimen>
+    <dimen name="phone_thumbnail_size">104dp</dimen>
+    <dimen name="selection_list_height">480dp</dimen>
+</resources>

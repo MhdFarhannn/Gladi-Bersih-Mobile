@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Widget.Rental.Screen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        style="@style/Widget.Rental.Toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:navigationContentDescription="@string/back"
+        app:navigationIcon="@drawable/ic_arrow_back" />
+
+    <androidx.core.widget.NestedScrollView
+        style="@style/Widget.Rental.Scroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/space_3">
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.Rental.Card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/list_padding"
+                android:layout_marginEnd="@dimen/list_padding"
+                android:layout_marginTop="@dimen/space_2">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/space_3">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:accessibilityHeading="true"
+                        android:text="@string/rental_period"
+                        android:textAppearance="?attr/textAppearanceTitleMedium" />
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/layout_start_date"
+                        style="@style/Widget.Rental.TextInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_2"
+                        android:hint="@string/start_date"
+                        app:startIconDrawable="@drawable/ic_calendar">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/input_start_date"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:clickable="true"
+                            android:cursorVisible="false"
+                            android:focusable="true"
+                            android:inputType="none" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/layout_end_date"
+                        style="@style/Widget.Rental.TextInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_2"
+                        android:hint="@string/expected_return_date"
+                        app:startIconDrawable="@drawable/ic_calendar">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/input_end_date"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:clickable="true"
+                            android:cursorVisible="false"
+                            android:focusable="true"
+                            android:inputType="none" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/list_padding"
+                android:layout_marginEnd="@dimen/list_padding"
+                android:layout_marginTop="@dimen/space_3"
+                android:accessibilityHeading="true"
+                android:text="@string/select_phone"
+                android:textAppearance="?attr/textAppearanceTitleLarge" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/list_padding"
+                android:layout_marginEnd="@dimen/list_padding"
+                android:layout_marginTop="@dimen/space_1"
+                android:text="@string/rental_selection_description"
+                android:textAppearance="?attr/textAppearanceBodyMedium" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/list_padding"
+                android:layout_marginEnd="@dimen/list_padding"
+                android:layout_marginTop="@dimen/space_2"
+                android:layout_marginBottom="@dimen/space_2"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.Rental.TextInput.Dense"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/search_phone"
+                    app:startIconDrawable="@drawable/ic_search">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/input_search"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionSearch"
+                        android:inputType="text" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_search"
+                    style="@style/Widget.Rental.Button.Icon"
+                    android:layout_width="@dimen/touch_target"
+                    android:layout_height="@dimen/touch_target"
+                    android:layout_marginStart="@dimen/space_1"
+                    android:contentDescription="@string/search_action"
+                    app:icon="@drawable/ic_search" />
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/selection_list_height">
+                <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                    android:id="@+id/swipe_refresh"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycler_phones"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:clipToPadding="false"
+                        android:paddingBottom="@dimen/space_4" />
+                </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+                <LinearLayout
+                    android:id="@+id/progress"
+                    style="@style/Widget.Rental.State"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <com.google.android.material.progressindicator.CircularProgressIndicator
+                        style="@style/Widget.Rental.Progress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:importantForAccessibility="no" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_2"
+                        android:gravity="center"
+                        android:accessibilityLiveRegion="polite"
+                        android:text="@string/loading_data"
+                        android:textAppearance="?attr/textAppearanceBodyMedium" />
+                </LinearLayout>
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:id="@+id/progress_more"
+                    style="@style/Widget.Rental.Progress.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:layout_marginBottom="@dimen/space_1"
+                    android:contentDescription="@string/loading_data"
+                    android:visibility="gone" />
+                <LinearLayout
+                    android:id="@+id/layout_empty"
+                    style="@style/Widget.Rental.State"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone">
+                    <ImageView
+                        android:layout_width="@dimen/state_icon_size"
+                        android:layout_height="@dimen/state_icon_size"
+                        android:importantForAccessibility="no"
+                        android:src="@drawable/ic_empty" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_2"
+                        android:gravity="center"
+                        android:text="@string/no_phone_found"
+                        android:textAppearance="?attr/textAppearanceBodyLarge" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/layout_error"
+                    style="@style/Widget.Rental.State"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone">
+                    <ImageView
+                        android:layout_width="@dimen/state_icon_size"
+                        android:layout_height="@dimen/state_icon_size"
+                        android:importantForAccessibility="no"
+                        android:src="@drawable/ic_error" />
+                    <TextView
+                        android:id="@+id/text_error"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_2"
+                        android:gravity="center"
+                        android:accessibilityLiveRegion="polite"
+                        android:textAppearance="?attr/textAppearanceBodyMedium" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/button_retry"
+                        style="@style/Widget.Rental.Button.Outlined"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_3"
+                        android:text="@string/retry" />
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorSurface"
+        android:orientation="vertical"
+        android:padding="@dimen/list_padding">
+        <TextView
+            android:id="@+id/text_estimate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:accessibilityLiveRegion="polite"
+            android:textAppearance="?attr/textAppearanceTitleMedium"
+            android:textColor="?attr/colorPrimary" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_1"
+            android:text="@string/estimate_disclaimer"
+            android:textAppearance="?attr/textAppearanceBodySmall" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_2"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_submit"
+                style="@style/Widget.Rental.Button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/submit_application" />
+            <com.google.android.material.progressindicator.CircularProgressIndicator
+                android:id="@+id/progress_submit"
+                style="@style/Widget.Rental.Progress.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_1"
+                android:contentDescription="@string/loading_data"
+                android:visibility="gone" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,6 @@
+<resources>
+    <style name="Theme.GladiMobille" parent="Base.Theme.GladiMobille">
+        <item name="android:windowLightNavigationBar">@bool/light_system_bars</item>
+        <item name="android:enforceNavigationBarContrast">false</item>
+    </style>
+</resources>

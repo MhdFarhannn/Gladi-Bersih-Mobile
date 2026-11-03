@@ -1,0 +1,235 @@
+<resources>
+    <style name="TextAppearance.Rental.HeadlineLarge" parent="TextAppearance.Material3.HeadlineLarge">
+        <item name="fontFamily">sans-serif-medium</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+    </style>
+    <style name="TextAppearance.Rental.HeadlineMedium" parent="TextAppearance.Material3.HeadlineMedium">
+        <item name="fontFamily">sans-serif-medium</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+    </style>
+    <style name="TextAppearance.Rental.HeadlineSmall" parent="TextAppearance.Material3.HeadlineSmall">
+        <item name="fontFamily">sans-serif-medium</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+    </style>
+    <style name="TextAppearance.Rental.TitleLarge" parent="TextAppearance.Material3.TitleLarge">
+        <item name="fontFamily">sans-serif-medium</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+    </style>
+    <style name="TextAppearance.Rental.TitleMedium" parent="TextAppearance.Material3.TitleMedium">
+        <item name="android:textColor">?attr/colorOnSurface</item>
+    </style>
+    <style name="TextAppearance.Rental.TitleSmall" parent="TextAppearance.Material3.TitleSmall">
+        <item name="android:textColor">?attr/colorOnSurface</item>
+    </style>
+    <style name="TextAppearance.Rental.BodyLarge" parent="TextAppearance.Material3.BodyLarge">
+        <item name="android:textColor">?attr/colorOnSurface</item>
+    </style>
+    <style name="TextAppearance.Rental.BodyMedium" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textColor">?attr/colorOnSurfaceVariant</item>
+    </style>
+    <style name="TextAppearance.Rental.BodySmall" parent="TextAppearance.Material3.BodySmall">
+        <item name="android:textColor">?attr/colorOnSurfaceVariant</item>
+    </style>
+    <style name="TextAppearance.Rental.LabelLarge" parent="TextAppearance.Material3.LabelLarge" />
+    <style name="TextAppearance.Rental.LabelMedium" parent="TextAppearance.Material3.LabelMedium" />
+    <style name="TextAppearance.Rental.LabelSmall" parent="TextAppearance.Material3.LabelSmall" />
+    <style name="TextAppearance.Rental.Price" parent="TextAppearance.Rental.TitleLarge">
+        <item name="android:textColor">?attr/colorPrimary</item>
+    </style>
+    <style name="TextAppearance.Rental.Error" parent="TextAppearance.Rental.BodySmall">
+        <item name="android:textColor">?attr/colorError</item>
+    </style>
+
+    <style name="ShapeAppearance.Rental.Small" parent="ShapeAppearance.Material3.Corner.Small">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/corner_small</item>
+    </style>
+    <style name="ShapeAppearance.Rental.Button" parent="ShapeAppearance.Rental.Small">
+        <item name="cornerSize">@dimen/corner_button</item>
+    </style>
+    <style name="ShapeAppearance.Rental.Card" parent="ShapeAppearance.Rental.Small">
+        <item name="cornerSize">@dimen/corner_card</item>
+    </style>
+    <style name="ShapeAppearance.Rental.Image" parent="ShapeAppearance.Rental.Small">
+        <item name="cornerSize">@dimen/corner_image</item>
+    </style>
+    <style name="ShapeAppearance.Rental.Sheet" parent="ShapeAppearance.Rental.Small">
+        <item name="cornerSize">@dimen/corner_sheet</item>
+    </style>
+
+    <style name="Widget.Rental.Screen" parent="">
+        <item name="android:background">?android:attr/colorBackground</item>
+    </style>
+    <style name="Widget.Rental.Scroll" parent="">
+        <item name="android:fillViewport">true</item>
+        <item name="android:clipToPadding">false</item>
+        <item name="android:overScrollMode">ifContentScrolls</item>
+    </style>
+    <style name="Widget.Rental.Content" parent="">
+        <item name="android:orientation">vertical</item>
+        <item name="android:padding">@dimen/screen_padding</item>
+    </style>
+    <style name="Widget.Rental.Toolbar" parent="Widget.Material3.Toolbar">
+        <item name="android:background">?android:attr/colorBackground</item>
+        <item name="android:minHeight">@dimen/toolbar_height</item>
+        <item name="android:elevation">@dimen/space_0</item>
+        <item name="titleTextAppearance">@style/TextAppearance.Rental.TitleLarge</item>
+        <item name="navigationIconTint">?attr/colorOnSurface</item>
+        <item name="titleTextColor">?attr/colorOnSurface</item>
+        <item name="subtitleTextColor">?attr/colorOnSurfaceVariant</item>
+    </style>
+    <style name="Widget.Rental.Card" parent="Widget.Material3.CardView.Filled">
+        <item name="shapeAppearance">@style/ShapeAppearance.Rental.Card</item>
+        <item name="cardBackgroundColor">?attr/colorSurface</item>
+        <item name="cardElevation">@dimen/space_0</item>
+        <item name="strokeWidth">@dimen/space_0</item>
+    </style>
+    <style name="Widget.Rental.Card.Tonal" parent="Widget.Rental.Card">
+        <item name="cardBackgroundColor">?attr/colorSurfaceContainerLow</item>
+    </style>
+    <style name="Widget.Rental.Card.Interactive" parent="Widget.Rental.Card">
+        <item name="strokeColor">@color/card_stroke</item>
+        <item name="strokeWidth">@dimen/focus_stroke_width</item>
+    </style>
+    <style name="Widget.Rental.AppBar" parent="Widget.Material3.AppBarLayout">
+        <item name="android:background">?android:attr/colorBackground</item>
+        <item name="android:elevation">@dimen/space_0</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+    <style name="Widget.Rental.Card.Primary" parent="Widget.Rental.Card">
+        <item name="cardBackgroundColor">?attr/colorPrimaryContainer</item>
+    </style>
+    <style name="Widget.Rental.Card.Outlined" parent="Widget.Rental.Card">
+        <item name="strokeColor">?attr/colorOutlineVariant</item>
+        <item name="strokeWidth">@dimen/stroke_width</item>
+    </style>
+    <style name="Widget.Rental.Image" parent="">
+        <item name="shapeAppearance">@style/ShapeAppearance.Rental.Image</item>
+        <item name="android:background">?attr/colorSurfaceContainerLow</item>
+        <item name="android:scaleType">fitCenter</item>
+    </style>
+    <style name="Widget.Rental.TextInput" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxBackgroundColor">?attr/colorSurface</item>
+        <item name="boxStrokeColor">@color/input_stroke</item>
+        <item name="boxCornerRadiusTopStart">@dimen/corner_field</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/corner_field</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/corner_field</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/corner_field</item>
+        <item name="hintTextColor">?attr/colorOnSurfaceVariant</item>
+        <item name="startIconTint">?attr/colorOnSurfaceVariant</item>
+        <item name="helperTextTextAppearance">@style/TextAppearance.Rental.BodySmall</item>
+        <item name="errorTextAppearance">@style/TextAppearance.Rental.Error</item>
+    </style>
+    <style name="Widget.Rental.TextInput.Dense" parent="Widget.Rental.TextInput">
+        <item name="boxCollapsedPaddingTop">@dimen/space_1</item>
+    </style>
+    <style name="Widget.Rental.Dropdown" parent="Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        <item name="boxBackgroundColor">?attr/colorSurface</item>
+        <item name="boxStrokeColor">@color/input_stroke</item>
+        <item name="boxCornerRadiusTopStart">@dimen/corner_field</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/corner_field</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/corner_field</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/corner_field</item>
+        <item name="hintTextColor">?attr/colorOnSurfaceVariant</item>
+        <item name="startIconTint">?attr/colorOnSurfaceVariant</item>
+    </style>
+    <style name="Widget.Rental.EditText" parent="Widget.Material3.TextInputEditText.OutlinedBox">
+        <item name="android:textAppearance">@style/TextAppearance.Rental.BodyLarge</item>
+        <item name="android:minHeight">@dimen/button_height</item>
+    </style>
+    <style name="Widget.Rental.Button" parent="Widget.Material3.Button">
+        <item name="shapeAppearance">@style/ShapeAppearance.Rental.Button</item>
+        <item name="android:minHeight">@dimen/button_height</item>
+        <item name="android:insetTop">@dimen/space_0</item>
+        <item name="android:insetBottom">@dimen/space_0</item>
+        <item name="android:textAppearance">@style/TextAppearance.Rental.LabelLarge</item>
+        <item name="iconPadding">@dimen/space_1</item>
+        <item name="iconSize">@dimen/icon_size</item>
+    </style>
+    <style name="Widget.Rental.Button.Outlined" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="shapeAppearance">@style/ShapeAppearance.Rental.Button</item>
+        <item name="android:minHeight">@dimen/touch_target</item>
+        <item name="android:insetTop">@dimen/space_0</item>
+        <item name="android:insetBottom">@dimen/space_0</item>
+        <item name="android:textAppearance">@style/TextAppearance.Rental.LabelLarge</item>
+        <item name="strokeColor">?attr/colorOutline</item>
+    </style>
+    <style name="Widget.Rental.Button.Text" parent="Widget.Material3.Button.TextButton">
+        <item name="shapeAppearance">@style/ShapeAppearance.Rental.Button</item>
+        <item name="android:minHeight">@dimen/touch_target</item>
+        <item name="android:insetTop">@dimen/space_0</item>
+        <item name="android:insetBottom">@dimen/space_0</item>
+        <item name="android:textAppearance">@style/TextAppearance.Rental.LabelLarge</item>
+    </style>
+    <style name="Widget.Rental.Button.Danger" parent="Widget.Rental.Button.Outlined">
+        <item name="android:textColor">?attr/colorError</item>
+        <item name="iconTint">?attr/colorError</item>
+        <item name="strokeColor">?attr/colorError</item>
+    </style>
+    <style name="Widget.Rental.Button.Icon" parent="Widget.Rental.Button.Outlined">
+        <item name="android:minWidth">@dimen/space_0</item>
+        <item name="android:padding">@dimen/space_0</item>
+        <item name="iconPadding">@dimen/space_0</item>
+        <item name="iconSize">@dimen/icon_size</item>
+    </style>
+    <style name="Widget.Rental.StatusChip" parent="Widget.Material3.Chip.Assist">
+        <item name="android:textAppearance">@style/TextAppearance.Rental.LabelMedium</item>
+        <item name="android:clickable">false</item>
+        <item name="android:focusable">false</item>
+        <item name="android:checkable">false</item>
+        <item name="chipMinHeight">@dimen/chip_height</item>
+        <item name="chipCornerRadius">@dimen/corner_small</item>
+        <item name="chipStrokeWidth">@dimen/space_0</item>
+        <item name="ensureMinTouchTargetSize">false</item>
+        <item name="chipBackgroundColor">@color/status_completed_background</item>
+        <item name="android:textColor">@color/status_completed_text</item>
+    </style>
+    <style name="Widget.Rental.State" parent="">
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:padding">@dimen/space_4</item>
+    </style>
+    <style name="Widget.Rental.Progress" parent="Widget.Material3.CircularProgressIndicator">
+        <item name="android:indeterminate">true</item>
+        <item name="indicatorColor">?attr/colorPrimary</item>
+        <item name="trackColor">?attr/colorSurfaceContainerHighest</item>
+        <item name="indicatorSize">@dimen/progress_size</item>
+        <item name="trackThickness">@dimen/progress_thickness</item>
+    </style>
+    <style name="Widget.Rental.Progress.Small" parent="Widget.Rental.Progress">
+        <item name="indicatorSize">@dimen/progress_small_size</item>
+    </style>
+    <style name="Widget.Rental.NavigationView" parent="Widget.Material3.NavigationView">
+        <item name="android:background">?attr/colorSurface</item>
+        <item name="itemTextAppearance">@style/TextAppearance.Rental.LabelLarge</item>
+        <item name="itemIconTint">@color/navigation_item_content</item>
+        <item name="itemTextColor">@color/navigation_item_content</item>
+        <item name="itemIconSize">@dimen/icon_size</item>
+        <item name="itemHorizontalPadding">@dimen/space_2</item>
+        <item name="itemVerticalPadding">@dimen/space_1</item>
+        <item name="itemShapeAppearance">@style/ShapeAppearance.Rental.Button</item>
+        <item name="itemShapeFillColor">@color/navigation_item_background</item>
+        <item name="itemShapeInsetStart">@dimen/space_2</item>
+        <item name="itemShapeInsetEnd">@dimen/space_2</item>
+    </style>
+    <style name="Widget.Rental.Snackbar" parent="Widget.Material3.Snackbar">
+        <item name="backgroundTint">?attr/colorSurfaceInverse</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.Rental.Button</item>
+    </style>
+    <style name="Widget.Rental.SnackbarButton" parent="Widget.Rental.Button.Text">
+        <item name="android:textColor">?attr/colorPrimaryInverse</item>
+    </style>
+    <style name="ThemeOverlay.Rental.Dialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.Rental.Sheet</item>
+    </style>
+    <style name="ThemeOverlay.Rental.BottomSheet" parent="ThemeOverlay.Material3.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/Widget.Rental.BottomSheet</item>
+    </style>
+    <style name="Widget.Rental.BottomSheet" parent="Widget.Material3.BottomSheet.Modal">
+        <item name="shapeAppearance">@style/ShapeAppearance.Rental.Sheet</item>
+    </style>
+</resources>

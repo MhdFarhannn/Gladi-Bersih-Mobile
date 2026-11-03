@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="theme_labels">
+        <item>@string/theme_system</item>
+        <item>@string/theme_light</item>
+        <item>@string/theme_dark</item>
+    </string-array>
+    <string-array name="return_condition_labels">
+        <item>@string/condition_good</item>
+        <item>@string/condition_light_damage</item>
+        <item>@string/condition_heavy_damage</item>
+        <item>@string/condition_lost</item>
+    </string-array>
+    <string-array name="return_condition_values" translatable="false">
+        <item>baik</item>
+        <item>rusak_ringan</item>
+        <item>rusak_berat</item>
+        <item>hilang</item>
+    </string-array>
+    <string-array name="availability_labels">
+        <item>@string/status_available</item>
+        <item>@string/status_unavailable</item>
+    </string-array>
+    <string-array name="availability_values" translatable="false">
+        <item>tersedia</item>
+        <item>tidak_tersedia</item>
+    </string-array>
+    <string-array name="item_condition_labels">
+        <item>@string/condition_good</item>
+        <item>@string/condition_light_damage</item>
+        <item>@string/condition_heavy_damage</item>
+    </string-array>
+    <string-array name="item_condition_values" translatable="false">
+        <item>baik</item>
+        <item>rusak_ringan</item>
+        <item>rusak_berat</item>
+    </string-array>
+</resources>
